@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\krist\\OneDrive\\Desktop\\BlazorApp\\BlazorApp\\BlazorApp.csproj": {}
+    "C:\\Users\\krist\\OneDrive\\Desktop\\BlazorApp\\BlazorApp\\BlazorApp.csproj": {}
   },
   "projects": {
-    "c:\\Users\\krist\\OneDrive\\Desktop\\BlazorApp\\BlazorApp\\BlazorApp.csproj": {
+    "C:\\Users\\krist\\OneDrive\\Desktop\\BlazorApp\\BlazorApp\\BlazorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\krist\\OneDrive\\Desktop\\BlazorApp\\BlazorApp\\BlazorApp.csproj",
+        "projectUniqueName": "C:\\Users\\krist\\OneDrive\\Desktop\\BlazorApp\\BlazorApp\\BlazorApp.csproj",
         "projectName": "BlazorApp",
-        "projectPath": "c:\\Users\\krist\\OneDrive\\Desktop\\BlazorApp\\BlazorApp\\BlazorApp.csproj",
+        "projectPath": "C:\\Users\\krist\\OneDrive\\Desktop\\BlazorApp\\BlazorApp\\BlazorApp.csproj",
         "packagesPath": "C:\\Users\\krist\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\krist\\OneDrive\\Desktop\\BlazorApp\\BlazorApp\\obj\\",
+        "outputPath": "C:\\Users\\krist\\OneDrive\\Desktop\\BlazorApp\\BlazorApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

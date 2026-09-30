@@ -23,7 +23,6 @@ c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\scopedcss\
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\scopedcss\Components\Layout\ReconnectModal.razor.rz.scp.css
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\scopedcss\bundle\BlazorApp.styles.css
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\scopedcss\projectbundle\BlazorApp.bundle.scp.css
-c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\hh92lrx13d-{0}-khy4lop6wu-khy4lop6wu.gz
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\v7vyzcc6qh-{0}-bqjiyaj88i-bqjiyaj88i.gz
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\m5e6rnmcep-{0}-c2jlpeoesf-c2jlpeoesf.gz
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\o0q64zz2g2-{0}-erw9l3u2r3-erw9l3u2r3.gz
@@ -71,8 +70,6 @@ c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\hsa0fwp5ls-{0}-abdmv1u4y3-abdmv1u4y3.gz
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\0txged01c1-{0}-9hsif5t8mt-9hsif5t8mt.gz
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\e2p7e3doxt-{0}-dwu72t6gfx-dwu72t6gfx.gz
-c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\8v4adbxxmx-{0}-2mc2qwa0tf-2mc2qwa0tf.gz
-c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\rrzzv9ip5o-{0}-2mc2qwa0tf-2mc2qwa0tf.gz
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\staticwebassets.build.json
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\staticwebassets.build.json.cache
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\staticwebassets.development.json
@@ -83,3 +80,7 @@ c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\refint\Bla
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\BlazorApp.pdb
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\BlazorApp.genruntimeconfig.cache
 c:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\ref\BlazorApp.dll
+C:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\BlazorApp.sourcelink.json
+C:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\hh92lrx13d-{0}-tg56jtdo8d-tg56jtdo8d.gz
+C:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\8v4adbxxmx-{0}-rxqusn2t5m-rxqusn2t5m.gz
+C:\Users\krist\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\rrzzv9ip5o-{0}-rxqusn2t5m-rxqusn2t5m.gz

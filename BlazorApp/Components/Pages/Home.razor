@@ -1,7 +1,255 @@
-﻿@page "/"
+@page "/"
+@rendermode InteractiveServer
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Portfolio</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="portfolio">
+    @* ===== Curtain Transition ===== *@
+    <div class="curtain @(isCurtainOpen ? "curtain--open" : "")" aria-hidden="true">
+        <div class="curtain__panel curtain__panel--top"></div>
+        <div class="curtain__panel curtain__panel--bottom"></div>
+    </div>
 
-Welcome to your new app.
+    @switch (currentScreen)
+    {
+        case AppScreen.IdEntry:
+            @* ===== ID Entry Screen ===== *@
+            <div class="screen" id="screen-id">
+                <div class="screen__upper">
+                    <div class="screen__rays"></div>
+                </div>
+                <div class="screen__lower">
+                    <div class="screen__content">
+                        <h1 class="screen__heading">Hello !</h1>
+                        <p class="screen__desc">
+                            Please enter<br />
+                            your network ID<br />
+                            to enter the<br />
+                            online world!
+                        </p>
+                        <div class="screen__big-text">ID</div>
+                        <label class="screen__label" for="input-id">Enter your ID:</label>
+                        <div class="screen__field">
+                            <input type="text"
+                                   class="screen__input"
+                                   id="input-id"
+                                   @bind="userId"
+                                   @bind:event="oninput"
+                                   maxlength="6"
+                                   placeholder="Max 6 characters.." />
+                        </div>
+                        <div class="screen__actions">
+                            <button class="screen__btn" @onclick="HandleRandomId" id="btn-random-id">Random</button>
+                            <button class="screen__btn" @onclick="HandleSubmitId" disabled="@(string.IsNullOrWhiteSpace(userId))" id="btn-submit-id">Submit</button>
+                        </div>
+                    </div>
+                    <div class="marquee" id="marquee-id">
+                        <div class="marquee__track">
+                            <span class="marquee__text">HELLO! Online Players HELLO! Online Players HELLO! Online Players HELLO! Online Players </span>
+                            <span class="marquee__text" aria-hidden="true">HELLO! Online Players HELLO! Online Players HELLO! Online Players HELLO! Online Players </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            break;
+
+        case AppScreen.RoleSelection:
+            @* ===== Role Selection Screen ===== *@
+            <div class="screen" id="screen-role">
+                <div class="screen__upper">
+                    <div class="screen__rays"></div>
+                </div>
+                <div class="screen__lower">
+                    <div class="screen__content">
+                        <h1 class="screen__heading">Hello !</h1>
+                        <p class="screen__identity">identity <strong>@userId</strong></p>
+                        <div class="screen__big-text">ROLE</div>
+                        <label class="screen__label">Choose your role</label>
+                        <div class="screen__roles">
+                            @foreach (var role in displayedRoles)
+                            {
+                                <button class="screen__role @(selectedRole == role ? "screen__role--active" : "")"
+                                        @onclick="() => HandleSelectRole(role)">
+                                    @role
+                                </button>
+                            }
+                        </div>
+                        <div class="screen__actions">
+                            <button class="screen__btn" @onclick="HandleBack" id="btn-back">Back</button>
+                            <button class="screen__btn" @onclick="HandleRandomRoles" id="btn-random-role">Random</button>
+                            <button class="screen__btn" @onclick="HandleSubmitRole" disabled="@(string.IsNullOrWhiteSpace(selectedRole))" id="btn-submit-role">Submit</button>
+                        </div>
+                    </div>
+                    <div class="marquee" id="marquee-role">
+                        <div class="marquee__track">
+                            <span class="marquee__text">HELLO! Online Players HELLO! Online Players HELLO! Online Players HELLO! Online Players </span>
+                            <span class="marquee__text" aria-hidden="true">HELLO! Online Players HELLO! Online Players HELLO! Online Players HELLO! Online Players </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            break;
+
+        case AppScreen.Desktop:
+            @* ===== Desktop Screen ===== *@
+            <div class="desktop" id="screen-desktop">
+                <div class="desktop__area">
+                    <div class="desktop__bg" aria-hidden="true">
+                        <div class="desktop__rays"></div>
+                        <div class="desktop__grid"></div>
+                    </div>
+
+                    <div class="folder folder--pos-1" @onclick='() => HandleOpenFolder("Projects")' id="folder-projects">
+                        <div class="folder__icon"><div class="folder__tab"></div><div class="folder__body"></div></div>
+                        <span class="folder__label">Projects</span>
+                    </div>
+
+                    <div class="folder folder--pos-2" @onclick='() => HandleOpenFolder("About")' id="folder-about">
+                        <div class="folder__icon"><div class="folder__tab"></div><div class="folder__body"></div></div>
+                        <span class="folder__label">About Me</span>
+                    </div>
+
+                    <div class="folder folder--pos-3" @onclick='() => HandleOpenFolder("Skills")' id="folder-skills">
+                        <div class="folder__icon"><div class="folder__tab"></div><div class="folder__body"></div></div>
+                        <span class="folder__label">Skills</span>
+                    </div>
+
+                    <div class="folder folder--pos-4" @onclick='() => HandleOpenFolder("Contact")' id="folder-contact">
+                        <div class="folder__icon"><div class="folder__tab"></div><div class="folder__body"></div></div>
+                        <span class="folder__label">Contact</span>
+                    </div>
+
+                    <div class="folder folder--pos-5" @onclick='() => HandleOpenFolder("Resume")' id="folder-resume">
+                        <div class="folder__icon"><div class="folder__tab"></div><div class="folder__body"></div></div>
+                        <span class="folder__label">Resume</span>
+                    </div>
+                </div>
+
+                <div class="taskbar" id="taskbar">
+                    <button class="taskbar__btn" @onclick="HandleRestart" id="btn-restart">RESTART</button>
+                    <div class="taskbar__divider"></div>
+                    <div class="taskbar__marquee">
+                        <div class="taskbar__marquee-track">
+                            <span class="taskbar__marquee-text">★ @userId.ToUpper() ★ @selectedRole ★ ONLINE ★ @userId.ToUpper() ★ @selectedRole ★ ONLINE ★ </span>
+                            <span class="taskbar__marquee-text" aria-hidden="true">★ @userId.ToUpper() ★ @selectedRole ★ ONLINE ★ @userId.ToUpper() ★ @selectedRole ★ ONLINE ★ </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            break;
+    }
+</div>
+
+@code {
+    // ── State machine ──────────────────────────────────────
+    private enum AppScreen { IdEntry, RoleSelection, Desktop }
+
+    private AppScreen currentScreen = AppScreen.IdEntry;
+    private bool isCurtainOpen = false;
+    private bool isTransitioning = false;
+
+    // ── User data ──────────────────────────────────────────
+    private string userId = "";
+    private string selectedRole = "";
+    private List<string> displayedRoles = new();
+
+    // ── Role pool ──────────────────────────────────────────
+    private static readonly string[] AllRoles =
+    {
+        "Blind", "Loyal", "Poetic", "Unbending", "Lovely",
+        "Thorough", "Attuning", "Curious", "Resourceful", "Meticulous",
+        "Guileful", "Astute", "August", "Elegant", "Diligent"
+    };
+
+    private readonly Random rng = new();
+
+    // ── Lifecycle ──────────────────────────────────────────
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Hold the curtain closed briefly, then reveal the first screen
+            await Task.Delay(1500);
+            isCurtainOpen = true;
+            StateHasChanged();
+        }
+    }
+
+    // ── Event handlers ─────────────────────────────────────
+    private void HandleRandomId()
+    {
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        userId = new string(
+            Enumerable.Range(0, 6)
+                      .Select(_ => chars[rng.Next(chars.Length)])
+                      .ToArray());
+    }
+
+    private async Task HandleSubmitId()
+    {
+        if (string.IsNullOrWhiteSpace(userId) || isTransitioning) return;
+        RefreshRoles();
+        await TransitionTo(AppScreen.RoleSelection);
+    }
+
+    private void HandleSelectRole(string role)
+    {
+        selectedRole = selectedRole == role ? "" : role;
+    }
+
+    private void HandleRandomRoles() => RefreshRoles();
+
+    private async Task HandleSubmitRole()
+    {
+        if (string.IsNullOrWhiteSpace(selectedRole) || isTransitioning) return;
+        await TransitionTo(AppScreen.Desktop);
+    }
+
+    private async Task HandleBack()
+    {
+        if (isTransitioning) return;
+        await TransitionTo(AppScreen.IdEntry);
+    }
+
+    private async Task HandleRestart()
+    {
+        if (isTransitioning) return;
+        userId = "";
+        selectedRole = "";
+        await TransitionTo(AppScreen.IdEntry);
+    }
+
+    private void HandleOpenFolder(string name)
+    {
+        // TODO: open a desktop window with folder content
+    }
+
+    // ── Helpers ────────────────────────────────────────────
+    private void RefreshRoles()
+    {
+        selectedRole = "";
+        displayedRoles = AllRoles.OrderBy(_ => rng.Next()).Take(5).ToList();
+    }
+
+    /// <summary>
+    /// Close curtain → swap screen → open curtain
+    /// </summary>
+    private async Task TransitionTo(AppScreen target)
+    {
+        isTransitioning = true;
+
+        isCurtainOpen = false;          // close
+        StateHasChanged();
+        await Task.Delay(800);
+
+        currentScreen = target;         // swap
+        StateHasChanged();
+        await Task.Delay(150);
+
+        isCurtainOpen = true;           // open
+        StateHasChanged();
+        await Task.Delay(800);
+
+        isTransitioning = false;
+    }
+}
