@@ -3,7 +3,7 @@
    ============================================ */
 
 /* ---------- Google Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700&family=Press+Start+2P&family=VT323&display=swap');
 
 /* ---------- Custom Properties ---------- */
 :root {
@@ -32,7 +32,8 @@
     /* Fonts */
     --font-display: 'Archivo Black', sans-serif;
     --font-body:    'Inter', sans-serif;
-    --font-pixel:   'Press Start 2P', monospace;
+    --font-pixel:       'Press Start 2P', monospace;
+    --font-pixel-thin:  'VT323', monospace;
 
     /* Transitions */
     --curtain-speed: 0.8s;
@@ -226,29 +227,31 @@ button {
 
 /* ---- Typography ---- */
 .screen__heading {
-    font-family: var(--font-display);
-    font-size: 3rem;
+    font-family: var(--font-pixel);
+    font-size: 1.8rem;
     color: var(--white);
-    margin-bottom: 0.4rem;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
+    margin-bottom: 0.7rem;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
     text-shadow: 0 0 30px var(--primary-glow);
 }
 
 .screen__desc {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 600;
+    font-family: var(--font-pixel);
+    font-size: 0.5rem;
     color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 0.6rem;
+    line-height: 2.2;
+    margin-bottom: 0.9rem;
+    letter-spacing: 0.03em;
 }
 
 .screen__identity {
-    font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-family: var(--font-pixel);
+    font-size: 0.48rem;
     color: var(--text-muted);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.04em;
+    line-height: 2;
 }
 
 .screen__identity strong {
@@ -257,11 +260,11 @@ button {
 }
 
 .screen__big-text {
-    font-family: var(--font-display);
-    font-size: 5rem;
-    line-height: 1;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.04em;
+    font-family: var(--font-pixel);
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.06em;
     background: linear-gradient(135deg, var(--primary-light), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -271,12 +274,11 @@ button {
 
 .screen__label {
     display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-family: var(--font-pixel-thin);
+    font-size: 1.3rem;
     color: var(--text-muted);
     margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
 }
 
 /* ---- Input ---- */
@@ -289,8 +291,8 @@ button {
 .screen__input {
     width: 100%;
     padding: 0.6rem 1rem;
-    font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-family: var(--font-pixel-thin);
+    font-size: 1.4rem;
     color: var(--text);
     background: var(--bg-card);
     border: 1.5px solid rgba(124, 58, 237, 0.4);
@@ -301,7 +303,8 @@ button {
 
 .screen__input::placeholder {
     color: var(--text-muted);
-    font-size: 0.82rem;
+    font-family: var(--font-pixel-thin);
+    font-size: 1.2rem;
 }
 
 .screen__input:focus {
@@ -322,14 +325,15 @@ button {
 .screen__role {
     width: 100%;
     padding: 0.5rem 1rem;
-    font-family: var(--font-body);
-    font-size: 0.88rem;
+    font-family: var(--font-pixel-thin);
+    font-size: 1.35rem;
     color: var(--text-muted);
     background: var(--bg-card);
     border: 1.5px solid rgba(124, 58, 237, 0.25);
     border-radius: 8px;
     cursor: pointer;
     text-align: center;
+    letter-spacing: 0.06em;
     transition: border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s;
 }
 
@@ -359,15 +363,15 @@ button {
 }
 
 .screen__btn {
-    font-size: 0.82rem;
-    font-weight: 700;
-    padding: 0.5rem 1.4rem;
+    font-family: var(--font-pixel-thin);
+    font-size: 1.4rem;
+    padding: 0.35rem 1.4rem;
     color: var(--text-muted);
     background: var(--bg-card);
     border: 1.5px solid rgba(124, 58, 237, 0.3);
     border-radius: 8px;
     cursor: pointer;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
     transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.15s, transform 0.1s;
 }
 
