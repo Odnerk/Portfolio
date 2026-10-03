@@ -296,7 +296,7 @@ button {
     color: var(--text);
     background: var(--bg-card);
     border: 1.5px solid rgba(124, 58, 237, 0.4);
-    border-radius: 8px;
+    border-radius: 0;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -330,7 +330,7 @@ button {
     color: var(--text-muted);
     background: var(--bg-card);
     border: 1.5px solid rgba(124, 58, 237, 0.25);
-    border-radius: 8px;
+    border-radius: 0;
     cursor: pointer;
     text-align: center;
     letter-spacing: 0.06em;
@@ -369,7 +369,7 @@ button {
     color: var(--text-muted);
     background: var(--bg-card);
     border: 1.5px solid rgba(124, 58, 237, 0.3);
-    border-radius: 8px;
+    border-radius: 0;
     cursor: pointer;
     letter-spacing: 0.08em;
     transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.15s, transform 0.1s;
@@ -396,10 +396,13 @@ button {
    ============================================ */
 .marquee {
     flex: 0 0 auto;
-    padding: 0.6rem 0;
+    margin: 0 1.5rem 1.25rem;
+    padding: 0.85rem 0;
     background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 50%, var(--accent-dark) 100%);
     overflow: hidden;
     white-space: nowrap;
+    border-radius: 4px;
+    box-shadow: 0 4px 24px rgba(124, 58, 237, 0.4);
 }
 
 .marquee__track {
@@ -411,12 +414,12 @@ button {
 
 .marquee__text {
     font-family: var(--font-pixel);
-    font-size: 0.65rem;
-    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.95);
     white-space: nowrap;
-    padding: 0 2rem;
+    padding: 0 2.5rem;
     flex-shrink: 0;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
 }
 
 @keyframes marquee-slide {
