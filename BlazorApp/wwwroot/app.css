@@ -126,7 +126,7 @@ button {
 .screen__upper {
     position: relative;
     flex: 0 0 32%;
-    background: linear-gradient(180deg, var(--bg-mid) 0%, var(--bg) 100%);
+    background: linear-gradient(160deg, #2d1b69 0%, #4c1d95 40%, #6d28d9 100%);
     overflow: hidden;
 }
 
@@ -139,31 +139,32 @@ button {
 .screen__rays::before {
     content: '';
     position: absolute;
-    bottom: -80%;
+    bottom: -60%;
     left: 50%;
-    width: 260%;
-    height: 260%;
+    width: 220%;
+    height: 220%;
     transform: translateX(-50%);
     background: repeating-conic-gradient(
         from 0deg at 50% 50%,
-        rgba(124, 58, 237, 0.06) 0deg 2.5deg,
-        transparent 2.5deg 5deg
+        rgba(255, 255, 255, 0.07) 0deg 3deg,
+        transparent 3deg 6deg
     );
-    animation: rays-spin 30s linear infinite;
+    animation: rays-spin 25s linear infinite;
 }
 
 .screen__rays::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -20%;
     left: 50%;
-    width: 140%;
-    height: 140%;
+    width: 160%;
+    height: 160%;
     transform: translateX(-50%);
     background: radial-gradient(
-        ellipse at 50% 100%,
-        rgba(124, 58, 237, 0.18) 0%,
-        transparent 65%
+        ellipse at 50% 90%,
+        rgba(167, 139, 250, 0.55) 0%,
+        rgba(109, 40, 217, 0.3) 35%,
+        transparent 70%
     );
 }
 
@@ -172,15 +173,28 @@ button {
     to   { transform: translateX(-50%) rotate(360deg); }
 }
 
+/* Bright central glow orb */
 .screen__upper::after {
     content: '';
     position: absolute;
-    bottom: -60px;
+    bottom: -80px;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+    width: 340px;
+    height: 340px;
+    background: radial-gradient(circle, rgba(196, 167, 255, 0.45) 0%, rgba(124, 58, 237, 0.25) 40%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Subtle shimmer line along the bottom edge */
+.screen__upper::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.8), rgba(34, 211, 238, 0.6), transparent);
     pointer-events: none;
 }
 
