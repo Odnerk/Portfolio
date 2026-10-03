@@ -196,6 +196,7 @@ button {
     flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -342,7 +343,7 @@ button {
 /* ---- Buttons ---- */
 .screen__actions {
     display: flex;
-    gap: 0;
+    gap: 0.5rem;
     width: 100%;
     max-width: 420px;
 }
@@ -377,7 +378,6 @@ button {
 /* Random button = narrower */
 #btn-random-id, #btn-back {
     flex: 1;
-    border-right: none;
 }
 
 /* Submit button = wider */
